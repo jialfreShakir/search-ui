@@ -1,4 +1,4 @@
-sudo: false
+sudo: required
 language: node_js
 notifications:
   email:
@@ -89,5 +89,5 @@ after_deploy:
 branches:
   only:
   - master
-  - "/^.*release.*$/1"
+  - "/^.*release.*$/"
   - "/2\\.[0-9]+\\.[0-9]+/"
