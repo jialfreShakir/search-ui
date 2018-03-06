@@ -15,7 +15,7 @@ import * as _ from 'underscore';
 import { exportGlobally } from '../../GlobalExports';
 import { MagicBox, createMagicBox } from '../../magicbox/MagicBox';
 import { Grammar } from '../../magicbox/Grammar';
-import { Result } from '../../../bin/ts/CoveoJsSearch';
+import { Result } from '../../magicbox/Result/Result';
 
 export interface IQueryboxOptions {
   enableSearchAsYouType?: boolean;
