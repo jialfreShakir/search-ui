@@ -15,6 +15,7 @@ import * as _ from 'underscore';
 import { exportGlobally } from '../../GlobalExports';
 import { MagicBox, createMagicBox } from '../../magicbox/MagicBox';
 import { Grammar } from '../../magicbox/Grammar';
+import { Result } from '../../../bin/ts/CoveoJsSearch';
 
 export interface IQueryboxOptions {
   enableSearchAsYouType?: boolean;
@@ -347,7 +348,7 @@ export class Querybox extends Component {
    *
    * @returns {Result} The result.
    */
-  public getResult() {
+  public getResult(): Result {
     return this.magicBox.getResult();
   }
 
