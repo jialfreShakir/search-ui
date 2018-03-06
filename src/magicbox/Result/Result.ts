@@ -1,5 +1,6 @@
 import { Expression } from '../Expression/Expression';
 import { ExpressionConstant } from '../Expression/ExpressionConstant';
+import { ExpressionEndOfInput } from '../Expression/ExpressionEndOfInput';
 import _ = require('underscore');
 
 export class Result {
@@ -298,5 +299,15 @@ export class Result {
       return JSON.stringify((<ExpressionConstant>this.expression).value);
     }
     return this.expression.id;
+  }
+}
+
+// Putting this class here avoids a circular dependency that breaks at runtime when trying to extend Result
+export class EndOfInputResult extends Result {
+  constructor(result: Result) {
+    super([result], ExpressionEndOfInput, result.input);
+    var endOfInput = new Result(null, ExpressionEndOfInput, result.input.substr(result.getLength()));
+    endOfInput.parent = this;
+    this.subResults.push(endOfInput);
   }
 }

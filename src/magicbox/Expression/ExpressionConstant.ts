@@ -1,6 +1,5 @@
 import { Expression } from './Expression';
-import { Result } from '../Result/Result';
-import { EndOfInputResult } from '../Result/EndOfInputResult';
+import { Result, EndOfInputResult } from '../Result/Result';
 
 export class ExpressionConstant implements Expression {
   constructor(public value: string, public id: string) {}

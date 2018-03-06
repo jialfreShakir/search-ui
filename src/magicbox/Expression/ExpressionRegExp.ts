@@ -1,7 +1,6 @@
 import { Expression } from './Expression';
 import { Grammar } from '../Grammar';
-import { Result } from '../Result/Result';
-import { EndOfInputResult } from '../Result/EndOfInputResult';
+import { Result, EndOfInputResult } from '../Result/Result';
 
 export class ExpressionRegExp implements Expression {
   constructor(public value: RegExp, public id: string, grammar: Grammar) {}

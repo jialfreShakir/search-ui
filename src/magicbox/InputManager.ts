@@ -78,7 +78,6 @@ export class InputManager {
    */
   private updateWordCompletion() {
     $$(this.ghostTextContainer).empty();
-    this.ghostTextContainer.innerHTML = '';
     if (this.wordCompletion != null) {
       this.ghostTextContainer.appendChild(document.createTextNode(this.wordCompletion.substr(this.result.input.length)));
     }
